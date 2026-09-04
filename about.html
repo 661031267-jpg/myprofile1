@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>เกี่ยวกับฉัน | My Profile</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: #f2f4fb;
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .browser {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(50,60,120,0.15);
+        }
+
+        /* =========================
+           BROWSER TOP
+        ========================= */
+
+        .browser-top {
+            height: 30px;
+            background: #151c4f;
+
+            display: flex;
+            align-items: center;
+
+            padding-left: 15px;
+            gap: 6px;
+        }
+
+        .browser-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .browser-dot:nth-child(1) {
+            background: #ff5f57;
+        }
+
+        .browser-dot:nth-child(2) {
+            background: #ffbd2e;
+        }
+
+        .browser-dot:nth-child(3) {
+            background: #28c840;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+
+            background: white;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #20245f;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #6842dd;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+
+            padding: 40px 30px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #8c56df,
+                    #6552dc,
+                    #218de7
+                );
+
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "✦";
+
+            position: absolute;
+
+            right: 10%;
+            top: 15px;
+
+            font-size: 60px;
+
+            color: rgba(255,255,255,0.12);
+        }
+
+        .hero::after {
+            content: "✧";
+
+            position: absolute;
+
+            left: 10%;
+            bottom: 10px;
+
+            font-size: 45px;
+
+            color: rgba(255,255,255,0.12);
+        }
+
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+
+            margin: auto;
+            margin-bottom: 12px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.18);
+
+            border: 2px solid rgba(255,255,255,0.5);
+
+            font-size: 32px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 2;
+
+            font-size: 34px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            position: relative;
+            z-index: 2;
+
+            margin-top: 5px;
+
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        /* =========================
+           ABOUT CONTENT
+        ========================= */
+
+        .about-container {
+            padding: 30px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 22px;
+        }
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .about-card {
+            background: #fff;
+
+            border: 1px solid #e3e5ee;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 5px 15px
+                rgba(50,60,120,0.06);
+
+            transition: 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(50,60,120,0.12);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 15px;
+
+            color: #4037ae;
+
+            font-size: 19px;
+
+            font-weight: 600;
+        }
+
+        .card-title i {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #efedff;
+
+            color: #6454d8;
+        }
+
+        /* =========================
+           PROFILE TEXT
+        ========================= */
+
+        .about-text {
+            font-size: 13px;
+
+            line-height: 2;
+
+            color: #666;
+
+            text-align: justify;
+        }
+
+        .about-text strong {
+            color: #4037ae;
+        }
+
+        /* =========================
+           PERSONAL DATA
+        ========================= */
+
+        .data-list {
+            list-style: none;
+        }
+
+        .data-list li {
+            display: flex;
+
+            align-items: center;
+
+            padding: 10px 0;
+
+            border-bottom: 1px dashed #e5e5e5;
+
+            font-size: 13px;
+        }
+
+        .data-list li:last-child {
+            border-bottom: none;
+        }
+
+        .data-list i {
+            width: 30px;
+
+            color: #6757d8;
+
+            font-size: 14px;
+        }
+
+        .data-label {
+            width: 110px;
+
+            color: #555;
+
+            font-weight: 500;
+        }
+
+        .data-value {
+            color: #777;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-item {
+            display: flex;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-icon {
+            min-width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #f0edff;
+
+            color: #6654d8;
+        }
+
+        .education-info h3 {
+            font-size: 15px;
+
+            color: #3e3d69;
+
+            margin-bottom: 3px;
+        }
+
+        .education-info p {
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            color: #777;
+        }
+
+        /* =========================
+           GOAL
+        ========================= */
+
+        .goal-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    #f4f1ff,
+                    #eef7ff
+                );
+        }
+
+        .goal-box {
+            display: flex;
+
+            gap: 15px;
+
+            align-items: flex-start;
+        }
+
+        .goal-icon {
+            min-width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: white;
+
+            color: #f2a900;
+
+            font-size: 20px;
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        .goal-box p {
+            font-size: 13px;
+
+            line-height: 1.9;
+
+            color: #666;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skill {
+            margin-bottom: 14px;
+        }
+
+        .skill:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 5px;
+
+            font-size: 12px;
+
+            color: #555;
+        }
+
+        .skill-bar {
+            height: 8px;
+
+            border-radius: 20px;
+
+            background: #eeeef5;
+
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #8b55df,
+                    #358de6
+                );
+        }
+
+        .skill-1 {
+            width: 90%;
+        }
+
+        .skill-2 {
+            width: 85%;
+        }
+
+        .skill-3 {
+            width: 80%;
+        }
+
+        .skill-4 {
+            width: 75%;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            height: 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #4036b8,
+                    #3429a7,
+                    #2246c8
+                );
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            body {
+                padding: 0;
+            }
+
+            .browser {
+                border-radius: 0;
+            }
+
+            nav {
+                height: auto;
+
+                padding: 15px;
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .about-container {
+                padding: 20px;
+            }
+
+            .about-card {
+                padding: 20px;
+            }
+
+            .data-label {
+                width: 90px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="browser">
+
+    <!-- =========================
+         BROWSER BAR
+    ========================= -->
+
+    <div class="browser-top">
+
+        <span class="browser-dot"></span>
+        <span class="browser-dot"></span>
+        <span class="browser-dot"></span>
+
+    </div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            My Profile
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="about.html">เกี่ยวกับ</a></li>
+            <li><a href="hobbies.html">งานอดิเรก</a></li>
+            <li><a href="contact.html">ช่องทางติดต่อ</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-icon">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+        <h1>
+            เกี่ยวกับฉัน
+        </h1>
+
+        <p>
+            ทำความรู้จักตัวตน ความสนใจ และเป้าหมายของฉัน
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT CONTENT
+    ========================= -->
+
+    <section class="about-container">
+
+
+        <!-- แนะนำตัว -->
+
+        <div class="about-card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-user"></i>
+
+                แนะนำตัว
+
+            </div>
+
+            <p class="about-text">
+
+                สวัสดีค่ะ ฉันชื่อ
+                <strong>นางสาวยัสมี ใบสะเหล็ม</strong>
+
+                เป็นนักศึกษาที่มีความสนใจด้านการศึกษา
+                เทคโนโลยี และการสร้างสรรค์สื่อดิจิทัล
+
+                ฉันชอบเรียนรู้สิ่งใหม่ ๆ
+                และพัฒนาทักษะของตนเองอยู่เสมอ
+                โดยเฉพาะการนำเทคโนโลยีมาประยุกต์ใช้
+                เพื่อสร้างสื่อการเรียนรู้ที่น่าสนใจ
+
+            </p>
+
+        </div>
+
+
+        <!-- ข้อมูลส่วนตัว -->
+
+        <div class="about-card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-id-card"></i>
+
+                ข้อมูลส่วนตัว
+
+            </div>
+
+            <ul class="data-list">
+
+                <li>
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span class="data-label">
+                        ชื่อ
+                    </span>
+
+                    <span class="data-value">
+                       นางสาวยัสมี ใบสะเหล็ม
+                    </span>
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-cake-candles"></i>
+
+                    <span class="data-label">
+                        วันเกิด
+                    </span>
+
+                    <span class="data-value">
+                        19 มิถุนายน 2547
+                    </span>
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <span class="data-label">
+                        สถานะ
+                    </span>
+
+                    <span class="data-value">
+                        นักศึกษา
+                    </span>
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span class="data-label">
+                        อีเมล
+                    </span>
+
+                    <span class="data-value">
+                        661031267@tsu.ac.th
+                    </span>
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span class="data-label">
+                        ที่อยู่
+                    </span>
+
+                    <span class="data-value">
+                        สงขลา ประเทศไทย
+                    </span>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- การศึกษา -->
+
+        <div class="about-card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                ประวัติการศึกษา
+
+            </div>
+
+
+            <div class="education-item">
+
+                <div class="education-icon">
+
+                    <i class="fa-solid fa-school"></i>
+
+                </div>
+
+                <div class="education-info">
+
+                    <h3>
+                        ระดับมัธยมศึกษา
+                    </h3>
+
+                    <p>
+                        ศึกษาระดับมัธยมศึกษา
+                        และเริ่มค้นหาความสนใจ
+                        ทางด้านเทคโนโลยีและการออกแบบ
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="education-item">
+
+                <div class="education-icon">
+
+                    <i class="fa-solid fa-university"></i>
+
+                </div>
+
+                <div class="education-info">
+
+                    <h3>
+                        ระดับมหาวิทยาลัย
+                    </h3>
+
+                    <p>
+                        คณะศึกษาศาสตร์
+                        สาขาเทคโนโลยีและสื่อสารการศึกษา
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ทักษะ -->
+
+        <div class="about-card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                ทักษะที่สนใจ
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>
+                        การออกแบบสื่อการเรียนรู้
+                    </span>
+
+                    <span>
+                        90%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress skill-1"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>
+                        การออกแบบกราฟิก
+                    </span>
+
+                    <span>
+                        85%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress skill-2"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>
+                        HTML / CSS
+                    </span>
+
+                    <span>
+                        80%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress skill-3"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+
+                    <span>
+                        เทคโนโลยี AI
+                    </span>
+
+                    <span>
+                        75%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div class="skill-progress skill-4"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- เป้าหมาย -->
+
+        <div class="about-card goal-card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+                เป้าหมายของฉัน
+
+            </div>
+
+            <div class="goal-box">
+
+                <div class="goal-icon">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                </div>
+
+                <p>
+
+                    ฉันต้องการพัฒนาความรู้และทักษะ
+                    ด้านเทคโนโลยีการศึกษาอย่างต่อเนื่อง
+                    และนำความรู้ที่ได้รับไปสร้างสรรค์
+                    สื่อการเรียนรู้ที่ช่วยให้ผู้เรียน
+                    เรียนรู้ได้อย่างสนุกและมีประสิทธิภาพ
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ความสนใจ -->
+
+        <div class="about-card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-heart"></i>
+
+                สิ่งที่ฉันสนใจ
+
+            </div>
+
+            <p class="about-text">
+
+                <strong>การศึกษา</strong> —
+                สนใจการออกแบบกิจกรรมและสื่อ
+                ที่ช่วยส่งเสริมการเรียนรู้
+
+                <br>
+
+                <strong>เทคโนโลยี</strong> —
+                สนใจเทคโนโลยีใหม่ ๆ
+                และการประยุกต์ใช้ AI
+
+                <br>
+
+                <strong>การออกแบบ</strong> —
+                ชอบออกแบบภาพ สื่อ และเว็บไซต์
+                ให้มีความสวยงามและใช้งานง่าย
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2024 My Profile Website |
+        All rights reserved.
+
+    </footer>
+
+</div>
+
+</body>
+</html>

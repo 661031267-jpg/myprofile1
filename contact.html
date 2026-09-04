@@ -1,0 +1,1052 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ช่องทางติดต่อ | My Profile</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: #f2f4fb;
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .browser {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(50,60,120,0.15);
+        }
+
+        /* =========================
+           BROWSER TOP
+        ========================= */
+
+        .browser-top {
+            height: 30px;
+            background: #151c4f;
+
+            display: flex;
+            align-items: center;
+
+            padding-left: 15px;
+            gap: 6px;
+        }
+
+        .browser-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .browser-dot:nth-child(1) {
+            background: #ff5f57;
+        }
+
+        .browser-dot:nth-child(2) {
+            background: #ffbd2e;
+        }
+
+        .browser-dot:nth-child(3) {
+            background: #28c840;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+
+            background: white;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #20245f;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #6842dd;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+
+            padding: 40px 30px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #8c56df,
+                    #6552dc,
+                    #218de7
+                );
+
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "✦";
+
+            position: absolute;
+
+            right: 10%;
+            top: 15px;
+
+            font-size: 60px;
+
+            color: rgba(255,255,255,0.12);
+        }
+
+        .hero::after {
+            content: "✧";
+
+            position: absolute;
+
+            left: 10%;
+            bottom: 10px;
+
+            font-size: 45px;
+
+            color: rgba(255,255,255,0.12);
+        }
+
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+
+            margin: auto;
+            margin-bottom: 12px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.18);
+
+            border: 2px solid rgba(255,255,255,0.5);
+
+            font-size: 32px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 2;
+
+            font-size: 34px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            position: relative;
+            z-index: 2;
+
+            margin-top: 5px;
+
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        /* =========================
+           CONTACT CONTENT
+        ========================= */
+
+        .contact-container {
+            padding: 30px;
+
+            display: grid;
+
+            grid-template-columns: 0.9fr 1.1fr;
+
+            gap: 25px;
+        }
+
+        /* =========================
+           CONTACT INFO
+        ========================= */
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 18px;
+
+            background: white;
+
+            border: 1px solid #e3e5ee;
+
+            border-radius: 13px;
+
+            box-shadow:
+                0 5px 15px
+                rgba(50,60,120,0.06);
+
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateX(5px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(50,60,120,0.12);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+
+            min-width: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            font-size: 21px;
+        }
+
+        .email-icon {
+            color: #e85d75;
+            background: #fff0f3;
+        }
+
+        .phone-icon {
+            color: #29a563;
+            background: #eafaf1;
+        }
+
+        .location-icon {
+            color: #e59624;
+            background: #fff7e8;
+        }
+
+        .facebook-icon {
+            color: #1877f2;
+            background: #edf4ff;
+        }
+
+        .instagram-icon {
+            color: #d94682;
+            background: #fff0f7;
+        }
+
+        .github-icon {
+            color: #222;
+            background: #f1f1f1;
+        }
+
+        .contact-text h3 {
+            font-size: 14px;
+            color: #3d3d68;
+            margin-bottom: 2px;
+        }
+
+        .contact-text p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 10px;
+            color: #777;
+        }
+
+        /* =========================
+           MESSAGE FORM
+        ========================= */
+
+        .form-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border: 1px solid #e3e5ee;
+
+            box-shadow:
+                0 5px 15px
+                rgba(50,60,120,0.06);
+        }
+
+        .form-title {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 20px;
+
+            color: #4037ae;
+
+            font-size: 19px;
+
+            font-weight: 600;
+        }
+
+        .form-title i {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #efedff;
+
+            color: #6454d8;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 6px;
+
+            font-size: 12px;
+
+            color: #555;
+
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 11px 13px;
+
+            border: 1px solid #dddfea;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            font-family: 'Kanit', sans-serif;
+
+            font-size: 12px;
+
+            background: #fafbff;
+
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #7761df;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(119,97,223,0.08);
+        }
+
+        .form-group textarea {
+            height: 110px;
+
+            resize: vertical;
+        }
+
+        .send-button {
+            width: 100%;
+
+            border: none;
+
+            padding: 12px;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7954d9,
+                    #3c8ee5
+                );
+
+            color: white;
+
+            font-family: 'Kanit', sans-serif;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .send-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 15px
+                rgba(80,80,180,0.25);
+        }
+
+        /* =========================
+           SOCIAL MEDIA
+        ========================= */
+
+        .social-section {
+            padding: 0 30px 30px;
+        }
+
+        .social-title {
+            text-align: center;
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            color: #4037ae;
+
+            margin-bottom: 15px;
+        }
+
+        .social-list {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+        .social-card {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 13px;
+
+            border: 1px solid #e4e5ee;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            color: #555;
+
+            font-size: 12px;
+
+            background: white;
+
+            transition: 0.3s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 6px 15px
+                rgba(50,60,120,0.1);
+        }
+
+        .social-card i {
+            font-size: 20px;
+        }
+
+        .social-instagram i {
+            color: #e1306c;
+        }
+
+        .social-facebook i {
+            color: #1877f2;
+        }
+
+        .social-github i {
+            color: #111;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            height: 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #4036b8,
+                    #3429a7,
+                    #2246c8
+                );
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .social-list {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            body {
+                padding: 0;
+            }
+
+            .browser {
+                border-radius: 0;
+            }
+
+            nav {
+                height: auto;
+
+                padding: 15px;
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .contact-container {
+                padding: 20px;
+            }
+
+            .social-section {
+                padding: 0 20px 20px;
+            }
+
+            .social-list {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="browser">
+
+    <!-- =========================
+         BROWSER BAR
+    ========================= -->
+
+    <div class="browser-top">
+
+        <span class="browser-dot"></span>
+        <span class="browser-dot"></span>
+        <span class="browser-dot"></span>
+
+    </div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            My Profile
+        </div>
+
+         <ul class="nav-menu">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="about.html">เกี่ยวกับ</a></li>
+            <li><a href="hobbies.html">งานอดิเรก</a></li>
+            <li><a href="contact.html">ช่องทางติดต่อ</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-icon">
+
+            <i class="fa-solid fa-envelope"></i>
+
+        </div>
+
+        <h1>
+            ช่องทางติดต่อ
+        </h1>
+
+        <p>
+            สามารถติดต่อและพูดคุยกับฉันได้ผ่านช่องทางต่าง ๆ
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT CONTENT
+    ========================= -->
+
+    <section class="contact-container">
+
+
+        <!-- =========================
+             CONTACT INFORMATION
+        ========================= -->
+
+        <div class="contact-info">
+
+
+            <!-- Email -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon email-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+                <div class="contact-text">
+
+                    <h3>
+                        อีเมล
+                    </h3>
+
+                    <p>
+                        661031267@tsu.ac.th
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Phone -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon phone-icon">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                </div>
+
+                <div class="contact-text">
+
+                    <h3>
+                        โทรศัพท์
+                    </h3>
+
+                    <p>
+                        093XXXXXXX
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Location -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon location-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+                <div class="contact-text">
+
+                    <h3>
+                        ที่อยู่
+                    </h3>
+
+                    <p>
+                        ประเทศไทย
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Facebook -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon facebook-icon">
+
+                    <i class="fa-brands fa-facebook"></i>
+
+                </div>
+
+                <div class="contact-text">
+
+                    <h3>
+                        Facebook
+                    </h3>
+
+                    <p>
+                        Yasmee Baisalem
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Instagram -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon instagram-icon">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </div>
+
+                <div class="contact-text">
+
+                    <h3>
+                        Instagram
+                    </h3>
+
+                    <p>
+                        @yasxmee_
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- GitHub -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon github-icon">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </div>
+
+                <div class="contact-text">
+
+                    <h3>
+                        GitHub
+                    </h3>
+
+                    <p>
+                        Yasmee_B
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             CONTACT FORM
+        ========================= -->
+
+        <div class="form-card">
+
+            <div class="form-title">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                ส่งข้อความถึงฉัน
+
+            </div>
+
+
+            <form id="contactForm">
+
+                <div class="form-group">
+
+                    <label>
+                        ชื่อ
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="กรุณากรอกชื่อของคุณ"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        อีเมล
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        หัวข้อ
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="หัวข้อที่ต้องการติดต่อ"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        ข้อความ
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="เขียนข้อความของคุณ..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="send-button"
+                >
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    ส่งข้อความ
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOCIAL MEDIA
+    ========================= -->
+
+    <section class="social-section">
+
+        <div class="social-title">
+            ติดตามฉันได้ที่
+        </div>
+
+        <div class="social-list">
+
+
+            <a
+                href="#"
+                class="social-card social-instagram"
+            >
+
+                <i class="fa-brands fa-instagram"></i>
+
+                Instagram
+
+            </a>
+
+
+            <a
+                href="#"
+                class="social-card social-facebook"
+            >
+
+                <i class="fa-brands fa-facebook"></i>
+
+                Facebook
+
+            </a>
+
+
+            <a
+                href="#"
+                class="social-card social-github"
+            >
+
+                <i class="fa-brands fa-github"></i>
+
+                GitHub
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2024 My Profile Website |
+        All rights reserved.
+
+    </footer>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    document
+        .getElementById("contactForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("name").value;
+
+            alert(
+                "ขอบคุณคุณ " +
+                name +
+                " สำหรับข้อความค่ะ 💜"
+            );
+
+            this.reset();
+
+        });
+
+</script>
+
+</body>
+</html>
+```

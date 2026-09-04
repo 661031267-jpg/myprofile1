@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>งานอดิเรก | My Profile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: #f2f4fb;
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .browser {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(50,60,120,0.15);
+        }
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .browser-top {
+            height: 30px;
+            background: #151c4f;
+
+            display: flex;
+            align-items: center;
+
+            padding-left: 15px;
+            gap: 6px;
+        }
+
+        .browser-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .browser-dot:nth-child(1) {
+            background: #ff5f57;
+        }
+
+        .browser-dot:nth-child(2) {
+            background: #ffbd2e;
+        }
+
+        .browser-dot:nth-child(3) {
+            background: #28c840;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #20245f;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #6842dd;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+
+            padding: 45px 30px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #8c56df,
+                    #6552dc,
+                    #218de7
+                );
+
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "✦";
+            position: absolute;
+            right: 10%;
+            top: 25px;
+
+            font-size: 60px;
+
+            color: rgba(255,255,255,0.12);
+        }
+
+        .hero::after {
+            content: "✧";
+            position: absolute;
+            left: 10%;
+            bottom: 10px;
+
+            font-size: 45px;
+
+            color: rgba(255,255,255,0.12);
+        }
+
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+
+            margin: auto;
+            margin-bottom: 15px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(255,255,255,0.18);
+
+            border-radius: 50%;
+
+            border: 2px solid rgba(255,255,255,0.5);
+
+            font-size: 35px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 2;
+
+            font-size: 34px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            position: relative;
+            z-index: 2;
+
+            margin-top: 5px;
+
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        /* =========================
+           HOBBIES
+        ========================= */
+
+        .hobbies {
+            padding: 30px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .hobby-card {
+            position: relative;
+
+            padding: 25px 18px;
+
+            text-align: center;
+
+            background: white;
+
+            border: 1px solid #e4e5ee;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 15px
+                rgba(50,60,120,0.07);
+
+            transition: 0.3s;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 12px 25px
+                rgba(50,60,120,0.15);
+        }
+
+        .hobby-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: auto;
+            margin-bottom: 15px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            font-size: 28px;
+        }
+
+        /* สีแต่ละการ์ด */
+
+        .book .hobby-icon {
+            background: #fff0f4;
+            color: #e85d87;
+        }
+
+        .music .hobby-icon {
+            background: #f0edff;
+            color: #7255d8;
+        }
+
+        .drawing .hobby-icon {
+            background: #fff5df;
+            color: #ed9c1d;
+        }
+
+        .game .hobby-icon {
+            background: #e8f5ff;
+            color: #2588d8;
+        }
+
+        .travel .hobby-icon {
+            background: #e8fff3;
+            color: #27a967;
+        }
+
+        .photo .hobby-icon {
+            background: #fff0e8;
+            color: #e87535;
+        }
+
+        .movie .hobby-icon {
+            background: #eeeaff;
+            color: #654dd4;
+        }
+
+        .learning .hobby-icon {
+            background: #fff8df;
+            color: #d5a000;
+        }
+
+        .hobby-card h2 {
+            font-size: 18px;
+
+            margin-bottom: 8px;
+
+            color: #30305e;
+        }
+
+        .hobby-card p {
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            color: #777;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            height: 35px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #4036b8,
+                    #3429a7,
+                    #2246c8
+                );
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .hobbies {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            body {
+                padding: 0;
+            }
+
+            .browser {
+                border-radius: 0;
+            }
+
+            nav {
+                height: auto;
+
+                padding: 15px;
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hobbies {
+                grid-template-columns: 1fr;
+
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="browser">
+
+    <!-- Browser Bar -->
+
+    <div class="browser-top">
+
+        <span class="browser-dot"></span>
+        <span class="browser-dot"></span>
+        <span class="browser-dot"></span>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            My Profile
+        </div>
+
+         <ul class="nav-menu">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="about.html">เกี่ยวกับ</a></li>
+            <li><a href="hobbies.html">งานอดิเรก</a></li>
+            <li><a href="contact.html">ช่องทางติดต่อ</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div class="hero-icon">
+            <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <h1>
+            งานอดิเรกของฉัน
+        </h1>
+
+        <p>
+            สิ่งที่ฉันชอบทำในเวลาว่างและสิ่งที่ช่วยเติมความสุขให้กับชีวิต
+        </p>
+
+    </section>
+
+
+    <!-- Hobby Cards -->
+
+    <section class="hobbies">
+
+        <!-- อ่านหนังสือ -->
+
+        <div class="hobby-card book">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <h2>
+                อ่านหนังสือ
+            </h2>
+
+            <p>
+                ชอบอ่านหนังสือเพื่อเพิ่มความรู้
+                และค้นหาแนวคิดใหม่ ๆ
+            </p>
+
+        </div>
+
+
+        <!-- ฟังเพลง -->
+
+        <div class="hobby-card music">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+
+            <h2>
+                ฟังเพลง
+            </h2>
+
+            <p>
+                ฟังเพลงในเวลาว่าง
+                เพื่อผ่อนคลายและสร้างแรงบันดาลใจ
+            </p>
+
+        </div>
+
+
+        <!-- วาดภาพ -->
+
+        <div class="hobby-card drawing">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-palette"></i>
+            </div>
+
+            <h2>
+                วาดภาพ
+            </h2>
+
+            <p>
+                สนุกกับการวาดภาพและออกแบบ
+                เพื่อสร้างสรรค์ผลงานใหม่ ๆ
+            </p>
+
+        </div>
+
+
+        <!-- เล่นเกม -->
+
+        <div class="hobby-card game">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-gamepad"></i>
+            </div>
+
+            <h2>
+                เล่นเกม
+            </h2>
+
+            <p>
+                เล่นเกมเพื่อความสนุก
+                และฝึกการคิดวิเคราะห์
+            </p>
+
+        </div>
+
+
+        <!-- ท่องเที่ยว -->
+
+        <div class="hobby-card travel">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-plane"></i>
+            </div>
+
+            <h2>
+                ท่องเที่ยว
+            </h2>
+
+            <p>
+                ชอบเดินทางไปสถานที่ใหม่ ๆ
+                และเรียนรู้ประสบการณ์ใหม่
+            </p>
+
+        </div>
+
+
+        <!-- ถ่ายรูป -->
+
+        <div class="hobby-card photo">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-camera"></i>
+            </div>
+
+            <h2>
+                ถ่ายภาพ
+            </h2>
+
+            <p>
+                ชอบถ่ายภาพเพื่อเก็บความทรงจำ
+                และบันทึกช่วงเวลาที่ประทับใจ
+            </p>
+
+        </div>
+
+
+        <!-- ดูหนัง -->
+
+        <div class="hobby-card movie">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-film"></i>
+            </div>
+
+            <h2>
+                ดูภาพยนตร์
+            </h2>
+
+            <p>
+                ชอบดูภาพยนตร์และซีรีส์
+                เพื่อความบันเทิงและผ่อนคลาย
+            </p>
+
+        </div>
+
+
+        <!-- เรียนรู้ -->
+
+        <div class="hobby-card learning">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+
+            <h2>
+                เรียนรู้สิ่งใหม่ ๆ
+            </h2>
+
+            <p>
+                สนใจเรียนรู้ทักษะใหม่
+                และพัฒนาตนเองอยู่เสมอ
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2024 My Profile Website |
+        All rights reserved.
+
+    </footer>
+
+</div>
+
+</body>
+</html>
